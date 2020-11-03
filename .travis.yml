@@ -8,7 +8,7 @@ jobs:
     - stage: test
       script:
         - mvn clean verify --file ./simple-api/pom.xml
-        - mvn clean verify --file ./simple-api/pom.xml org.jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Alexishpr_Docker-tp2
+        - mvn clean verify --file ./simple-api/pom.xml org.jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Docker-tp2
 
     - stage: deploy
       script:
