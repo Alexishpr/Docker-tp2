@@ -3,9 +3,24 @@ language: java
 services:
   - docker
 
-script:
-  #TODO: test and build your application with maven
-  - mvn clean verify --file ./simple-api/pom.xml
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker-compose build
-  - docker-compose push
+jobs:
+  include:
+    - stage: test
+      script:
+        - mvn clean verify --file ./simple-api/pom.xml
+        - mvn clean verify --file ./simple-api/pom.xml org.jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=devops_tp2
+
+    - stage: deploy
+      script:
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - docker-compose build
+        - docker-compose push
+
+cache:
+  directories:
+    - "HOME/.m2"
+
+addons:
+  sonarcloud:
+    organization: "Alexishpr"
+    token: "$SONARCLOUD_TOKEN"
