@@ -7,5 +7,5 @@ script:
   #TODO: test and build your application with maven
   - mvn clean verify --file ./simple-api/pom.xml
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - dockercompose build
+  - docker-compose build
   - docker-compose push
