@@ -1,7 +1,7 @@
 - name: database
   docker_container:
     name: database
-    image: alexishpt/database
+    image: alexishpr/tp1_database:latest
     restart_policy: always
     env:
       POSTGRES_PASSWORD: pwd
@@ -9,5 +9,6 @@
       POSTGRES_DB: db
     volumes:
       - /data
-    network:
+
+    networks:
       - name: app-network
