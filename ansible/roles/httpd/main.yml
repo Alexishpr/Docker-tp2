@@ -1,0 +1,7 @@
+- name: Run HTTPD
+  docker_container:
+    name: httpd
+    image: alexishpr/httpd
+
+  networks:
+    - name: app-network
