@@ -1,7 +1,7 @@
 all:
   vars:
     ansible_user: centos
-    ansible_ssh_private_key_file: /mnt/c/users/space/desktop/docker/tp1/ansible/id_rsa
+    ansible_ssh_private_key_file: /mnt/c/users/space/desktop/docker/id_rsa
   children:
     prod:
       hosts: alexis.hooper.takima.cloud
