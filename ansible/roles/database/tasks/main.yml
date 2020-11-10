@@ -3,6 +3,7 @@
     name: database
     image: alexishpr/tp1_database
     restart_policy: always
+    pull: yes
     env:
       POSTGRES_PASSWORD: pwd
       POSTGRES_USER: usr
