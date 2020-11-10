@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
   backend:
     container_name: backend
@@ -25,12 +25,9 @@ services:
     networks:
       - app-network
 
-
 volumes:
   my_db_volume:
     driver: local
 
 networks:
   app-network:
-
-
